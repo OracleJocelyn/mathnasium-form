@@ -1,0 +1,233 @@
+<!-- Declares HTML Document -->
+<!DOCTYPE html>
+<!-- Sets language to English -->
+<html lang="en"> 
+  <!-- Header contains metadata -->
+  <head>
+    <meta charset="UTF-8">   <!-- Formats text and sets character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   <!-- Formats for device screen size -->
+    <title>Mathnasium Form</title>   <!-- Title is name of browser tab/page -->
+    <link rel="stylesheet" href="styles.css">   <!-- Links to external CSS file -->
+  </head>
+  <!-- Body contains visible content -->
+  <body>
+    <form>
+        <div class="PageContainer">
+            <div class="TopContainer">
+                <img src="https://www.fairfaxcorner.com/media/v1/140/2019/04/mathnasium-logo-vector.png" 
+                     alt="Mathnasium Logo" width="280" height="140">
+                <h1 class="PageHeading">Mathnasium of Orland Park</h1>
+            </div>
+
+            <div class="FamilyContainer">
+                <h3 class="InformationHeading">Family Information</h3>
+                <div class="FamilyInfo">
+                  <div>
+                    <label>Parent/Guardian Name 1:
+                        <input type="text" id="parentguardian1" name="parentguardian1" style="width: 203px;"><br>
+                    </label>
+                    <label>Relation to Student:
+                        <input type="text" id="studentrelation1" name="studentrelation1" style="width: 250px;"><br>
+                    </label>
+                    <label>Street Address:
+                        <input type="text" id="streetaddress1" name="streetaddress1" style="width: 285px;"><br>
+                    </label>
+                  </div>
+                  <div>
+                    <label>Primary Phone:
+                        <input type="tel" id="primaryphone1" name="primaryphone1" style="width: 194px;">
+                        <select id="primaryphonetype1" name="primaryphonetype1">
+                            <option> </option>
+                            <option value="home">Home</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="work">Work</option>
+                        </select>
+                    </label>
+                    <label>Secondary Phone:
+                        <input type="tel" id="secondaryphone1" name="secondaryphone1" style="width: 170px;">
+                        <select id="secondaryphonetype1" name="secondaryphonetype1">
+                            <option> </option>
+                            <option value="home">Home</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="work">Work</option>
+                        </select>
+                    </label>
+                    <label>Email Address:
+                        <input type="email" id="parentemail1" name="parentemail1" style="width: 288px;">
+                    </label>
+                  </div>
+                </div>
+                <p class="LineBreak"></p>
+                <div class="FamilyInfo">
+                  <div>
+                    <label>Parent/Guardian Name 2:
+                        <input type="text" id="parentguardian2" name="parentguardian2" style="width: 203px;"><br>
+                    </label>
+                    <label>Relation to Student:
+                        <input type="text" id="studentrelation2" name="studentrelation2" style="width: 250px;"><br>
+                    </label>
+                    <label>Street Address:
+                        <input type="text" id="streetaddress2" name="streetaddress2" style="width: 285px;"><br>
+                    </label>
+                  </div>
+                  <div>
+                    <label>Primary Phone:
+                        <input type="tel" id="primaryphone2" name="primaryphone2" style="width: 193px;">
+                        <select id="primaryphonetype2" name="primaryphonetype2">
+                            <option> </option>
+                            <option value="home">Home</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="work">Work</option>
+                        </select>
+                    </label>
+                    <label>Secondary Phone:
+                        <input type="tel" id="secondaryphone2" name="secondaryphone2" style="width: 170px;">
+                        <select id="secondaryphonetype2" name="secondaryphonetype2">
+                            <option> </option>
+                            <option value="home">Home</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="work">Work</option>
+                        </select>
+                    </label>
+                    <label>Email Address:
+                        <input type="email" id="parentemail2" name="parentemail2" style="width: 288px;">
+                    </label>
+                  </div>
+                </div>
+                <p class="LineBreak"></p>
+                <div class="EmergencyInfo">
+                  <div>
+                    <label id="EmergencyContactLabel">Emergency Contact:
+                        <input type="text" id="emergencycontact" name="emergencycontact" style="width: 216px;">
+                    </label>
+                  </div>
+                  <div>
+                    <label>Relation to Student:
+                        <input type="text" id="emergencyrelation" name="emergencyrelation" style="width: 250px;">
+                    </label>
+                    <label>Phone:
+                        <input type="tel" id="emergencyphonenumber" name="emergencyphonenumber" style="width: 351px;">
+                    </label>
+                  </div>
+                </div>
+            </div>
+            <br>
+            <div class="StudentContainer">
+                <h3 class="InformationHeading">Student Information</h3>
+                <div class="StudentInfo">
+                  <div>
+                    <label>Student Name 1:
+                        <input type="text" id="studentname1" name="studentname1" style="width: 230px;">
+                    </label>
+                    <label>School:
+                        <input type="text" id="studentschool1" name="studentschool1" style="width: 305px;">
+                    </label>
+                  </div>
+                  <div>
+                    <label >Birthdate:
+                        <input type="date" id="studentbirthdate1" name="studentbirthdate1" style="width: 130px;">
+                    </label>
+                    <label>Grade:
+                    <input type="text" id="studentgrade1" name="studentgrade1" style="width: 152px;">
+                    </label>
+                  </div>
+                </div>
+                <p class="LineBreak"></p>
+                <div class="StudentInfo">
+                  <div>
+                    <label>Student Name 2:
+                        <input type="text" id="studentname2" name="studentname2" style="width: 230px;">
+                    </label>
+                    <label>School:
+                        <input type="text" id="studentschool2" name="studentschool2" style="width: 305px;">
+                    </label>
+                  </div>
+                  <div>
+                    <label >Birthdate:
+                        <input type="date" id="studentbirthdate2" name="studentbirthdate2" style="width: 130px;">
+                    </label>
+                    <label>Grade:
+                        <input type="text" id="studentgrade2" name="studentgrade2" style="width: 152px;">
+                    </label>
+                  </div>
+                </div>
+                <p class="LineBreak"></p>
+                <div class="StudentInfo">
+                  <div>
+                    <label>Student Name 3:
+                        <input type="text" id="studentname3" name="studentname3" style="width: 230px;">
+                    </label>
+                    <label>School:
+                        <input type="text" id="studentschool3" name="studentschool3" style="width: 305px;">
+                    </label>
+                  </div>
+                  <div>
+                    <label>Birthdate:
+                        <input type="date" id="studentbirthdate3" name="studentbirthdate3" style="width: 130px;">
+                    </label>
+                    <label>Grade:
+                        <input type="text" id="studentgrade3" name="studentgrade3" style="width: 152px;">
+                    </label>
+                  </div>
+                </div>
+            </div>
+            <br>
+            <div class="SurveyContainer">
+                <h3 class="InformationHeading">How did you hear about Mathnasium?</h3>
+                <div class="SurveyInfo">
+                    <label>
+                        <input type="checkbox" id="locationorsign" name="source" value="locationorsign">
+                        Location/Sign
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="mailing" name="source" value="mailing">
+                        Mailing
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="school" name="source" value="school">
+                        School
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="printad" name="source" value="printad">
+                        Print Ad
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="event" name="source" value="event">
+                        Event
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="referral" name="source" value="referral">
+                        Referral
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="internet" name="source" value="internet">
+                        Internet: Facebook, Yelp, Google, or Website
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="other" name="source" value="other">
+                        Other
+                    </label><br><br>
+                    <div id="referralExtra" class="extra-source-field">
+                        <label>
+                            Referral Name:
+                            <input type="text" id="referralName" name="referralName">
+                        </label>
+                    </div>
+                    <div id="otherExtra" class="extra-source-field">
+                        <label>
+                            Other Source:
+                            <input type="text" id="otherSource" name="otherSource">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <p class="LineBreak"></p>
+            <div class="ButtonContainer">
+                <button type="button" id="ResetButton">Reset</button>
+                <button type="submit" id="SubmitButton">Submit</button>
+            </div>
+        </div>
+    </form>
+    <script src="script.js"></script>   <!-- Links to external JavaScript file -->
+  </body>
+</html>

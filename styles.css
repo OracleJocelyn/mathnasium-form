@@ -1,0 +1,268 @@
+/*------------------Whole Page Section------------------*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    background-color: white;
+    font-size: 18px;
+}
+
+.PageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/*------------------Page Heading Section------------------*/
+.TopContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.PageHeading {
+    font-size: 28px;
+    font-weight: lighter;
+    color: #333;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.InformationHeading {
+    font-size: 20px;
+    text-align: center;
+    color: #333;
+    margin-top: 0px;
+    font-family: Roboto, sans-serif;
+    background-color: rgb(235, 60, 60);
+    color: white;
+    padding: 10px;
+}
+
+.LineBreak {
+    background-color: rgb(235, 60, 60);
+    width: 100%;
+    height: 4px;
+    margin: 20px 0px;
+    padding: 0px;
+    border: none;
+}
+
+.FamilyContainer, .StudentContainer, .SurveyContainer{
+    width: 100%;
+    margin-top: 20px;
+    max-width: 1500px;
+}
+
+input[type="text"], input[type="email"], input[type="date"], input[type="tel"]{
+  height: 25px;
+  width: 70%;
+  max-width: 220px;
+  box-sizing: border-box;
+  font-size: 17px;
+}
+
+.field-family-name { width: 203px; max-width: 203px; }
+.field-family-relation { width: 250px; max-width: 250px; }
+.field-family-address { width: 285px; max-width: 285px; }
+.field-family-phone { width: 194px; max-width: 194px; }
+.field-family-phone2 { width: 170px; max-width: 170px; }
+.field-family-email { width: 288px; max-width: 288px; }
+.field-emergency-contact { width: 216px; max-width: 216px; }
+.field-emergency-relation { width: 250px; max-width: 250px; }
+.field-emergency-phone { width: 351px; max-width: 351px; }
+.field-student-name { width: 230px; max-width: 230px; }
+.field-student-school { width: 305px; max-width: 305px; }
+.field-student-birthdate { width: 130px; max-width: 130px; }
+.field-student-grade { width: 152px; max-width: 152px; }
+
+.extra-source-field { display: none; width: 100%; margin-top: 8px; }
+.extra-source-field label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.extra-source-field input {
+  width: 240px;
+  max-width: 240px;
+}
+
+.field-family-wide {
+  width: 240px;
+  max-width: 240px;
+}
+
+.field-family-medium {
+  width: 180px;
+  max-width: 180px;
+}
+
+.field-emergency-name {
+  width: 280px;
+  max-width: 280px;
+}
+
+.field-emergency-short {
+  width: 180px;
+  max-width: 180px;
+}
+
+.field-student-wide {
+  width: 240px;
+  max-width: 240px;
+}
+
+.FamilyContainer label,
+.StudentContainer label,
+.EmergencyInfo label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.FamilyContainer label input,
+.StudentContainer label input,
+.EmergencyInfo label input {
+  width: auto;
+  max-width: none;
+  min-width: 0;
+}
+
+/*------------------Family Section------------------*/
+.FamilyContainer label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.FamilyInfo {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.FamilyContainer select,
+.StudentContainer select {
+  height: 20px;
+  font-size: 14px;
+  width: auto;
+  min-width: 80px;
+}
+
+.EmergencyInfo {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0px 110px;
+}
+
+#EmergencyContactLabel {
+    display: flex;
+    gap: 10px;  /* space between text and input */
+    color: rgb(235, 60, 60);
+    font-weight: bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    margin-right: 10px; 
+    margin-bottom: 10px; 
+}
+
+
+/*------------------Student Section------------------*/
+.StudentContainer label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.StudentInfo {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.StudentContainer select {
+  height: 20px;
+  font-size: 14px;
+}
+
+.EmergencyInfo {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/*------------------Survey Section------------------*/
+.SurveyInfo {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 10px 25px;
+}
+
+.SurveyContainer input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+
+/*------------------Button Section------------------*/
+.ButtonContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.ButtonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 20px;
+}
+
+.ButtonContainer button {
+  min-width: 120px;
+  padding: 8px 15px;
+  cursor: pointer;
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: rgb(190, 226, 248)
+}
+
+.ButtonContainer button:hover {
+  background-color: rgb(47, 98, 175);
+  color: white;
+}
+
+.ButtonContainer button:active {
+  background-color: rgb(112, 152, 210);
+  color: white;
+}
