@@ -4,36 +4,43 @@
 <html lang="en"> 
   <!-- Header contains metadata -->
   <head>
-    <meta charset="UTF-8">   <!-- Formats text and sets character encoding -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">   <!-- Formats for device screen size -->
-    <title>Mathnasium Form</title>   <!-- Title is name of browser tab/page -->
-    <link rel="stylesheet" href="styles.css">   <!-- Links to external CSS file -->
+    <meta charset="UTF-8">                                                       <!-- Formats text and sets character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">       <!-- Formats for device screen size -->
+    <title>Mathnasium Form</title>                                               <!-- Title is name of browser tab/page -->
+    <link rel="stylesheet" href="styles.css">                                    <!-- Links to external CSS file -->
   </head>
   <!-- Body contains visible content -->
   <body>
+    <!-- Form content contains all sections of the form including buttons -->
     <form>
+        <!-- PageContainer div contains all sections on page -->
         <div class="PageContainer">
+            <!-- TopContainer div contains top section: left Mathnasium logo, right Mathnasium Center name -->
             <div class="TopContainer">
-                <img src="https://www.fairfaxcorner.com/media/v1/140/2019/04/mathnasium-logo-vector.png" 
-                     alt="Mathnasium Logo" width="280" height="140">
-                <h1 class="PageHeading">Mathnasium of Orland Park</h1>
+                <img src="https://www.fairfaxcorner.com/media/v1/140/2019/04/mathnasium-logo-vector.png"                      
+                     alt="Mathnasium Logo" width="280" height="140">                                                           <!-- img of Mathnasium Logo -->
+                <h1 class="PageHeading">Mathnasium of Orland Park</h1>                                                         <!-- PageHeading class contains Mathnasium Center name -->
             </div>
 
+          
+            <!-- FamilyContainer div contains section to fill in family information -->
             <div class="FamilyContainer">
-                <h3 class="InformationHeading">Family Information</h3>
+                <h3 class="InformationHeading">Family Information</h3>                                                         <!-- InformationHeading class contains this section heading -->
+                <!-- FamilyInfo class contains 3 partitioned sections for all userinput for FamilyContainer -->
                 <div class="FamilyInfo">
-                  <div>
+                  <div id="FamilyInfo-topleft-section">
                     <label>Parent/Guardian Name 1:
-                        <input type="text" id="parentguardian1" name="parentguardian1" style="width: 203px;"><br>
+                        <input type="text" id="parentguardian1" name="parentguardian1" style="width: 203px;"><br>              <!-- parentguardian1 id contains textbox with identidical label and data identifier name -->
                     </label>
                     <label>Relation to Student:
-                        <input type="text" id="studentrelation1" name="studentrelation1" style="width: 250px;"><br>
+                        <input type="text" id="studentrelation1" name="studentrelation1" style="width: 250px;"><br>            <!-- relationtostudent1 id contains textbox with identidical label and data identifier name -->
                     </label>
                     <label>Street Address:
-                        <input type="text" id="streetaddress1" name="streetaddress1" style="width: 285px;"><br>
+                        <input type="text" id="streetaddress1" name="streetaddress1" style="width: 285px;"><br>                <!-- streetaddress1 id contains textbox with identidical label and data identifier name -->
                     </label>
                   </div>
-                  <div>
+                  
+                  <div id="FamilyInfo-topright-section">
                     <label>Primary Phone:
                         <input type="tel" id="primaryphone1" name="primaryphone1" style="width: 194px;">
                         <select id="primaryphonetype1" name="primaryphonetype1">
@@ -57,9 +64,12 @@
                     </label>
                   </div>
                 </div>
+
+                <!-- LineBreak class contains paragraph line break -->
                 <p class="LineBreak"></p>
+              
                 <div class="FamilyInfo">
-                  <div>
+                  <div id="FamilyInfo-middleleft-section">
                     <label>Parent/Guardian Name 2:
                         <input type="text" id="parentguardian2" name="parentguardian2" style="width: 203px;"><br>
                     </label>
@@ -70,7 +80,8 @@
                         <input type="text" id="streetaddress2" name="streetaddress2" style="width: 285px;"><br>
                     </label>
                   </div>
-                  <div>
+                  
+                  <div id="FamilyInfo-middleright-section">
                     <label>Primary Phone:
                         <input type="tel" id="primaryphone2" name="primaryphone2" style="width: 193px;">
                         <select id="primaryphonetype2" name="primaryphonetype2">
@@ -94,14 +105,18 @@
                     </label>
                   </div>
                 </div>
+
+                <!-- LineBreak class contains paragraph line break -->
                 <p class="LineBreak"></p>
+              
                 <div class="EmergencyInfo">
-                  <div>
+                  <div id="FamilyInfo-bottomleft-section">
                     <label id="EmergencyContactLabel">Emergency Contact:
                         <input type="text" id="emergencycontact" name="emergencycontact" style="width: 216px;">
                     </label>
                   </div>
-                  <div>
+                  
+                  <div id="FamilyInfo-bottomright-section">
                     <label>Relation to Student:
                         <input type="text" id="emergencyrelation" name="emergencyrelation" style="width: 250px;">
                     </label>
@@ -111,123 +126,199 @@
                   </div>
                 </div>
             </div>
+          
             <br>
+
+          
+            <!-- StudentContainer div contains section to fill in student information -->
             <div class="StudentContainer">
-                <h3 class="InformationHeading">Student Information</h3>
+                <h3 class="InformationHeading">Student Information</h3>                                                        <!-- InformationHeading class contains this section heading -->
+                <!-- StudentInfo class contains 3 partitioned sections for all userinput for StudentContainer -->
                 <div class="StudentInfo">
-                  <div>
-                    <label>Student Name 1:
-                        <input type="text" id="studentname1" name="studentname1" style="width: 230px;">
+                  <div id="StudentInfo-topleft-section">
+                    <label>Student 1:
+                        <input type="text" id="studentname1" name="studentname1" style="width: 230px;">                        <!-- studentname1 id contains textbox with identical label and data identifier name -->
                     </label>
                     <label>School:
-                        <input type="text" id="studentschool1" name="studentschool1" style="width: 305px;">
+                        <input type="text" id="studentschool1" name="studentschool1" style="width: 305px;">                    <!-- studentschool1 id contains textbox with identical label and data identifier name -->
                     </label>
                   </div>
-                  <div>
-                    <label >Birthdate:
-                        <input type="date" id="studentbirthdate1" name="studentbirthdate1" style="width: 130px;">
+                  
+                  <div id="StudentInfo-topright-section">
+                    <label>Birthdate:
+                        <input type="date" id="studentbirthdate1" name="studentbirthdate1" style="width: 130px;">              <!-- studentbirthdate1 id contains textbox with identical label and data identifier name -->
                     </label>
                     <label>Grade:
-                    <input type="text" id="studentgrade1" name="studentgrade1" style="width: 152px;">
+                        <select id="studentgrade1" name="studentgrade1" style="width: 152px;">                                 <!-- studentgrade1 id contains dropdown with identical label and data identifier name -->
+                            <option> </option>                                                                                 <!-- blank dropdown option with null value -->
+                            <option value="Kindergaten">Kindergaten</option>                                                   <!-- Kindergarten dropdown option with identical value -->
+                            <option value="1st Grade">1st Grade</option>                                                       <!-- 1st Grade dropdown option with identical value -->
+                            <option value="2nd Grade">2nd Grade</option>                                                       <!-- 2nd Grade dropdown option with identical value -->
+                            <option value="3rd Grade">3rd Grade</option>                                                       <!-- 3rd Grade dropdown option with identical value -->
+                            <option value="4th Grade">4th Grade</option>                                                       <!-- 4th Grade dropdown option with identical value -->
+                            <option value="5th Grade">5th Grade</option>                                                       <!-- 5th Grade dropdown option with identical value -->
+                            <option value="6th Grade">6th Grade</option>                                                       <!-- 6th Grade dropdown option with identical value -->
+                            <option value="7th Grade">7th Grade</option>                                                       <!-- 7th Grade dropdown option with identical value -->
+                            <option value="8th Grade">8th Grade</option>                                                       <!-- 8th Grade dropdown option with identical value -->
+                            <option value="9th Grade">9th Grade</option>                                                       <!-- 9th Grade dropdown option with identical value -->
+                            <option value="10th Grade">10th Grade</option>                                                     <!-- 10th Grade dropdown option with identical value -->
+                            <option value="11th Grade">11th Grade</option>                                                     <!-- 11th Grade dropdown option with identical value -->
+                            <option value="12th Grade">12th Grade</option>                                                     <!-- 12th Grade dropdown option with identical value -->
+                        </select>
                     </label>
                   </div>
                 </div>
+
+                <!-- LineBreak class contains paragraph line break -->
                 <p class="LineBreak"></p>
+              
                 <div class="StudentInfo">
-                  <div>
-                    <label>Student Name 2:
+                  <div id="StudentInfo-middleleft-section">
+                    <label>Student 2:
                         <input type="text" id="studentname2" name="studentname2" style="width: 230px;">
                     </label>
                     <label>School:
                         <input type="text" id="studentschool2" name="studentschool2" style="width: 305px;">
                     </label>
                   </div>
-                  <div>
+                  
+                  <div id="StudentInfo-middleright-section">
                     <label >Birthdate:
                         <input type="date" id="studentbirthdate2" name="studentbirthdate2" style="width: 130px;">
                     </label>
                     <label>Grade:
-                        <input type="text" id="studentgrade2" name="studentgrade2" style="width: 152px;">
+                        <select id="studentgrade2" name="studentgrade2" style="width: 152px;">                                 <!-- studentgrade2 id contains dropdown with identical label and data identifier name -->
+                            <option> </option>                                                                                 <!-- blank dropdown option with null value -->
+                            <option value="Kindergaten">Kindergaten</option>                                                   <!-- Kindergarten dropdown option with identical value -->
+                            <option value="1st Grade">1st Grade</option>                                                       <!-- 1st Grade dropdown option with identical value -->
+                            <option value="2nd Grade">2nd Grade</option>                                                       <!-- 2nd Grade dropdown option with identical value -->
+                            <option value="3rd Grade">3rd Grade</option>                                                       <!-- 3rd Grade dropdown option with identical value -->
+                            <option value="4th Grade">4th Grade</option>                                                       <!-- 4th Grade dropdown option with identical value -->
+                            <option value="5th Grade">5th Grade</option>                                                       <!-- 5th Grade dropdown option with identical value -->
+                            <option value="6th Grade">6th Grade</option>                                                       <!-- 6th Grade dropdown option with identical value -->
+                            <option value="7th Grade">7th Grade</option>                                                       <!-- 7th Grade dropdown option with identical value -->
+                            <option value="8th Grade">8th Grade</option>                                                       <!-- 8th Grade dropdown option with identical value -->
+                            <option value="9th Grade">9th Grade</option>                                                       <!-- 9th Grade dropdown option with identical value -->
+                            <option value="10th Grade">10th Grade</option>                                                     <!-- 10th Grade dropdown option with identical value -->
+                            <option value="11th Grade">11th Grade</option>                                                     <!-- 11th Grade dropdown option with identical value -->
+                            <option value="12th Grade">12th Grade</option>                                                     <!-- 12th Grade dropdown option with identical value -->
+                        </select>
                     </label>
                   </div>
                 </div>
+
+                <!-- LineBreak class contains paragraph line break -->
                 <p class="LineBreak"></p>
+              
                 <div class="StudentInfo">
-                  <div>
-                    <label>Student Name 3:
+                  <div id="StudentInfo-bottomleft-section">
+                    <label>Student 3:
                         <input type="text" id="studentname3" name="studentname3" style="width: 230px;">
                     </label>
                     <label>School:
                         <input type="text" id="studentschool3" name="studentschool3" style="width: 305px;">
                     </label>
                   </div>
-                  <div>
+                  
+                  <div id="StudentInfo-bottomright-section">
                     <label>Birthdate:
                         <input type="date" id="studentbirthdate3" name="studentbirthdate3" style="width: 130px;">
                     </label>
                     <label>Grade:
-                        <input type="text" id="studentgrade3" name="studentgrade3" style="width: 152px;">
+                        <select id="studentgrade3" name="studentgrade3" style="width: 152px;">                                 <!-- studentgrade3 id contains dropdown with identical label and data identifier name -->
+                            <option> </option>                                                                                 <!-- blank dropdown option with null value -->
+                            <option value="Kindergaten">Kindergaten</option>                                                   <!-- Kindergarten dropdown option with identical value -->
+                            <option value="1st Grade">1st Grade</option>                                                       <!-- 1st Grade dropdown option with identical value -->
+                            <option value="2nd Grade">2nd Grade</option>                                                       <!-- 2nd Grade dropdown option with identical value -->
+                            <option value="3rd Grade">3rd Grade</option>                                                       <!-- 3rd Grade dropdown option with identical value -->
+                            <option value="4th Grade">4th Grade</option>                                                       <!-- 4th Grade dropdown option with identical value -->
+                            <option value="5th Grade">5th Grade</option>                                                       <!-- 5th Grade dropdown option with identical value -->
+                            <option value="6th Grade">6th Grade</option>                                                       <!-- 6th Grade dropdown option with identical value -->
+                            <option value="7th Grade">7th Grade</option>                                                       <!-- 7th Grade dropdown option with identical value -->
+                            <option value="8th Grade">8th Grade</option>                                                       <!-- 8th Grade dropdown option with identical value -->
+                            <option value="9th Grade">9th Grade</option>                                                       <!-- 9th Grade dropdown option with identical value -->
+                            <option value="10th Grade">10th Grade</option>                                                     <!-- 10th Grade dropdown option with identical value -->
+                            <option value="11th Grade">11th Grade</option>                                                     <!-- 11th Grade dropdown option with identical value -->
+                            <option value="12th Grade">12th Grade</option>                                                     <!-- 12th Grade dropdown option with identical value -->
+                        </select>
                     </label>
                   </div>
                 </div>
             </div>
+          
             <br>
+
+          
+            <!-- SurveyContainer div contains section to share where user heard about program -->
             <div class="SurveyContainer">
-                <h3 class="InformationHeading">How did you hear about Mathnasium?</h3>
+                <h3 class="InformationHeading">How did you hear about Mathnasium?</h3>                                         <!-- InformationHeading class contains this section heading -->
+                <!-- SurveyInfo contains all userinput for SurveyContainer -->
                 <div class="SurveyInfo">
-                    <label>
+                    <label>                                                                                                    <!-- locationorsign id contains checkbox option with identical value, label; and data identifier name: source -->
                         <input type="checkbox" id="locationorsign" name="source" value="locationorsign">
                         Location/Sign
                     </label><br>
-                    <label>
+                    <label>                                                                                                    <!-- mailing id contains checkbox option with identical value, label; and data identifier name: source -->
                         <input type="checkbox" id="mailing" name="source" value="mailing">
                         Mailing
                     </label><br>
-                    <label>
+                    <label>                                                                                                    <!-- school id contains checkbox option with identical value, label; and data identifier name: source -->
                         <input type="checkbox" id="school" name="source" value="school">
                         School
                     </label><br>
-                    <label>
+                    <label>                                                                                                    <!-- printad id contains checkbox option with identical value, label; and data identifier name: source -->
                         <input type="checkbox" id="printad" name="source" value="printad">
                         Print Ad
                     </label><br>
-                    <label>
+                    <label>                                                                                                    <!-- event id contains checkbox option with identical value, label; and data identifier name: source -->
                         <input type="checkbox" id="event" name="source" value="event">
                         Event
                     </label><br>
-                    <label>
+                    <label>                                                                                                    <!-- referral id contains checkbox option with identical value, label; and data identifier name: source -->
                         <input type="checkbox" id="referral" name="source" value="referral">
                         Referral
                     </label><br>
-                    <label>
+                    <label>                                                                                                    <!-- internet id contains checkbox option with identical value, label; and data identifier name: source -->
                         <input type="checkbox" id="internet" name="source" value="internet">
                         Internet: Facebook, Yelp, Google, or Website
                     </label><br>
-                    <label>
+                    <label>                                                                                                    <!-- other id contains checkbox option with identical value, label; and data identifier name: source -->
                         <input type="checkbox" id="other" name="source" value="other">
                         Other
                     </label><br><br>
+
+                    <!-- extra-source-field div contains pop-up userinput fields for referral checkbox and other checkbox-->
+                    <!-- SHOULD EVENTUALLY REMOVE referralExtra AND otherExtra!!!!!!!!!!!!!!!! -->
                     <div id="referralExtra" class="extra-source-field">
-                        <label>
+                        <label>                                                                                                <!-- referralName id contains textbox with identical label and data identifier name -->
                             Referral Name:
                             <input type="text" id="referralName" name="referralName">
                         </label>
                     </div>
+
+                    <!--SHOULD EVENTUALLY INCLUDE THIS DIV IN SAME DIV AS extra-source-field div -->
                     <div id="otherExtra" class="extra-source-field">
-                        <label>
+                        <label>                                                                                                <!-- otherSource id contains textbox with identical label and data identifier name -->
                             Other Source:
                             <input type="text" id="otherSource" name="otherSource">
                         </label>
                     </div>
                 </div>
             </div>
+
+            <!-- LineBreak class contains paragraph line break -->
             <p class="LineBreak"></p>
+
+          
+            <!-- ButtonContainer div contains bottom section: reset button and submit button -->
             <div class="ButtonContainer">
-                <button type="button" id="ResetButton">Reset</button>
-                <button type="submit" id="SubmitButton">Submit</button>
+                <button type="button" id="ResetButton">Reset</button>                                                          <!-- ResetButton id contains reset button -->
+                <button type="submit" id="SubmitButton">Submit</button>                                                        <!-- SubmitButton id contains submit button -->
             </div>
         </div>
     </form>
-    <script src="script.js"></script>   <!-- Links to external JavaScript file -->
+
+    <!-- Links to external JavaScript file -->
+    <script src="script.js"></script>   
   </body>
 </html>
