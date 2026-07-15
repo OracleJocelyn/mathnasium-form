@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------Whole Page------------------------------------------------------------------*/
-
+/*Page's Body CSS*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -61,7 +61,7 @@ body {
     max-width: 1500px;
 }
 
-input[type="text"], input[type="email"], input[type="date"], input[type="tel"] {
+input[type="text"], input[type="email"], input[type="date"], input[type="tel"], select {
   height: 25px;
   width: 70%;
   max-width: 220px;
@@ -82,16 +82,26 @@ input[type="text"], input[type="email"], input[type="date"], input[type="tel"] {
   font-size: 17px;
 }
 
-.extra-source-field { display: none; width: 100%; margin-top: 8px; }
+.extra-source-field { 
+  display: none; 
+  width: 100%; 
+  margin-top: 8px; 
+}
+
 .extra-source-field label {
   display: flex;
   align-items: center;
   gap: 8px;
   white-space: nowrap;
 }
-.extra-source-field input {
-  width: 240px;
-  max-width: 240px;
+
+#referralName {
+    width: 226px;
+    max-width: 250px;
+}
+#otherSource {
+    width: 236px;
+    max-width: 250px;
 }
 
 .FamilyContainer label,
@@ -195,7 +205,7 @@ input[type="text"], input[type="email"], input[type="date"], input[type="tel"] {
     align-items: center;
     margin-top: 20px;
     justify-content: center;
-    gap: 10px 25px;
+    gap: 10px 15px;
 }
 
 .SurveyContainer input[type="checkbox"] {
