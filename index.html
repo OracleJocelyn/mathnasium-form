@@ -35,8 +35,8 @@
                     <label>Relation to Student:
                         <input type="text" id="studentrelation1" name="studentrelation1" style="width: 290px;"><br>            <!-- relationtostudent1 id contains textbox with identidical label and data identifier name -->
                     </label>
-                    <label>Street Address:
-                        <input type="text" id="streetaddress1" name="streetaddress1" style="width: 325px;"><br>                <!-- streetaddress1 id contains textbox with identidical label and data identifier name -->
+                    <label>Address:
+                        <input type="text" id="streetaddress1" name="streetaddress1" style="width: 377px;"><br>                <!-- streetaddress1 id contains textbox with identidical label and data identifier name -->
                     </label>
                   </div>
                   
@@ -77,8 +77,8 @@
                     <label>Relation to Student:
                         <input type="text" id="studentrelation2" name="studentrelation2" style="width: 290px;"><br>            <!-- studentrelation2 id contains textbox with identidical label and data identifier name -->
                     </label>
-                    <label>Street Address:
-                        <input type="text" id="streetaddress2" name="streetaddress2" style="width: 325px;"><br>                <!-- streetaddress2 id contains textbox with identidical label and data identifier name -->
+                    <label>Address:
+                        <input type="text" id="streetaddress2" name="streetaddress2" style="width: 377px;"><br>                <!-- streetaddress2 id contains textbox with identidical label and data identifier name -->
                     </label>
                   </div>
                   
@@ -284,29 +284,38 @@
                     </label><br>
                     <label>                                                                                                    <!-- internet id contains checkbox option with identical value, label; and data identifier name: source -->
                         <input type="checkbox" id="internet" name="source" value="internet">
-                        Internet: Facebook, Yelp, Google, or Website
+                        Internet
                     </label><br>
                     <label>                                                                                                    <!-- other id contains checkbox option with identical value, label; and data identifier name: source -->
                         <input type="checkbox" id="other" name="source" value="other">
                         Other
                     </label><br><br>
-
+                  
                     <!-- extra-source-field div contains pop-up userinput fields for referral checkbox and other checkbox-->
-                    <!-- SHOULD EVENTUALLY REMOVE referralExtra AND otherExtra!!!!!!!!!!!!!!!! -->
                     <div id="referralExtra" class="extra-source-field">
-                        <label>                                                                                                <!-- referralName id contains textbox with identical label and data identifier name -->
+                        <label>                                                                                                <!-- referralExtra id contains textbox with identical label and data identifier name -->
                             Referral Name:
                             <input type="text" id="referralName" name="referralName">
                         </label>
                     </div>
-
-                    <!--SHOULD EVENTUALLY INCLUDE THIS DIV IN SAME DIV AS extra-source-field div -->
+                    <div id="internetExtra" class="extra-source-field">
+                        <label>                                                                                                <!-- internetExtra id contains textbox with identical label and data identifier name -->
+                            Internet Source: 
+                            <select>                               
+                              <option>Facebook</option>
+                              <option>Yelp</option>
+                              <option>Google</option>
+                              <option>Website</option>
+                            </select>
+                        </label>
+                    </div>
                     <div id="otherExtra" class="extra-source-field">
-                        <label>                                                                                                <!-- otherSource id contains textbox with identical label and data identifier name -->
+                        <label>                                                                                                <!-- otherExtra id contains textbox with identical label and data identifier name -->
                             Other Source:
                             <input type="text" id="otherSource" name="otherSource">
                         </label>
                     </div>
+                    
                 </div>
             </div>
 
