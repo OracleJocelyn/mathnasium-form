@@ -64,7 +64,7 @@
     const form = document.querySelector('form');
 
     //Google Apps Script URL (it should look like: 'https://script.google.com/macros/s/ . . . /exec')
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyv3pkIKHFKXWSMmQDB8wfLzAYVQE4F-lr_hA0C3xEPHJLR0wTPl2D6oufGkkjs9LjZ0w/exec';        // [ REPLACE YOUR GOOGLE APPS SCRIPT URL HERE!!! ]
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbycjB1zykcoR3isxcFzT6ni4ANBjhn1nX7ZuYweYQz3KBAfAcUgRrv-k2z_J68iY4xBnA/exec';        // [ REPLACE YOUR GOOGLE APPS SCRIPT DEPLOYMENT WEB APP URL HERE!!! ]
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //PHONE NUMBER: FORMATTING, VISIBILITY, EVENT LISTENER
