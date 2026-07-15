@@ -52,8 +52,9 @@
     var referral = document.getElementById('referral');
     var internet = document.getElementById('internet');
     var other = document.getElementById('other');
-    var referralExtra = document.getElementById('referralExtra');               //EVENTUALLY FIX WHETHER referralExtra is label id and referralSource is input id
-    var otherExtra = document.getElementById('otherExtra');                     //EVENTUALLY FIX WHETHER otherExtra is label id and otherSource is input id
+    var referralExtra = document.getElementById('referralExtra');
+    var internetExtra = document.getElementById('internetExtra');               
+    var otherExtra = document.getElementById('otherExtra');                     
 
     //Button Variables
     const resetButton = document.getElementById('ResetButton');
@@ -69,15 +70,15 @@
 //PHONE NUMBER: FORMATTING, VISIBILITY, EVENT LISTENER
 
     //U.S. Phone Formatting Masking Logic
-        //Line 81: function takes in input's value when called
-        /**Line 82: declares const variable digits which contains String value
+        //Line 82: function takes in input's value when called
+        /**Line 83: declares const variable digits which contains String value
                     keeps value if it is truthy, otherwise uses empty string (to prevent missing value error)
                     removes every non-digit character (\D means any character not 0-9) (g means replace all instances of non-digit characters)
                     keeps only the first 10 digits of value**/
-        //Line 83: function returns empty if value has no digits (to prevent empty phone number)
-        //Line 84: function returns opening parenthesis and digits if value has 1–3 digits
-        //Line 85: function returns first 3 digits in parenthesis (area code) if value has 6 or less digits
-        //Line 86: function returns formatted phone number with area code in parenthesis and hyphen 
+        //Line 84: function returns empty if value has no digits (to prevent empty phone number)
+        //Line 85: function returns opening parenthesis and digits if value has 1–3 digits
+        //Line 86: function returns first 3 digits in parenthesis (area code) if value has 6 or less digits
+        //Line 87: function returns formatted phone number with area code in parenthesis and hyphen 
     function formatPhoneValue(value) {
         const digits = String(value || '').replace(/\D/g, '').slice(0, 10);
         if (digits.length === 0) return '';
@@ -87,43 +88,43 @@
     }
 
     //Phone Number Textbox Visual Reformatting Changes Code
-        //Line 93: function takes in input when called
-        //Line 94: function ends if no input element 
-        //Line 95: takes input's value as argument for formatPhoneValue function and changes input to new value (puts new formatted phone-number in textbox)
+        //Line 94: function takes in input when called
+        //Line 95: function ends if no input element 
+        //Line 96: takes input's value as argument for formatPhoneValue function and changes input to new value (puts new formatted phone-number in textbox)
     function formatPhoneInput(input) {
         if (!input) return;
         input.value = formatPhoneValue(input.value);
     }
 
     //Phone Number Validation Code (requires 10 digits)
-        //Line 105: function takes in phone number and runs when called
-        /**Line 106: declares const variable digits which contains String value
+        //Line 106: function takes in phone number and runs when called
+        /**Line 107: declares const variable digits which contains String value
                     keeps value if it is truthy, otherwise uses empty string (to prevent missing value error)
                     removes every non-digit character (\D means any character not 0-9) (g means replace all instances of non-digit characters)
                     keeps only the first 10 digits of value**/
-        //Line 107: returns whether phone number is 10 digits long exactly
+        //Line 108: returns whether phone number is 10 digits long exactly
     function isValidPhone(phone) {
         const digits = String(phone || '').replace(/\D/g, '');
         return digits.length === 10;
     }
 
     //Instantaneous Phone Textbox Formatting Code While User Types
-        //Line 127: declares const array phoneInputs of all phonenumber variables
-        //Line 128: does a callback function on each input in phoneInputs array ([array].forEach() loops through every item in array)
-        //Line 129: skips to next item if item is empty
-        //Line 130: adds input event listener with anonymous function to each existing element
-            //Line 131: whenever user types into field, input is used as argument for formatPhoneInput function
-            //Line 132: clears any custom validation error message previously set on form element
-        //Line 134: when user leaves input field, anonymous function follows
-            //Line 135: declares const variable digits which contains value of input field without non-digit characters
-            //Line 136: if input field value has no digits (empty)
-                //Line 137: clears any custom validation error messages previously/currently shown
-                //Line 138: exits function
-            //Line 140: if input field does not have 10 digits
-                //Line 141: writes custom validation error message to enter valid phone number
-                //Line 142: displays validation message immediately
-            //Line 144: clears any custom validation error messages previously/currently shown
-        //Line 148: sets maxlength attribute of 14 so input cannot exceed formatted phone number length
+        //Line 128: declares const array phoneInputs of all phonenumber variables
+        //Line 129: does a callback function on each input in phoneInputs array ([array].forEach() loops through every item in array)
+        //Line 130: skips to next item if item is empty
+        //Line 131: adds input event listener with anonymous function to each existing element
+            //Line 132: whenever user types into field, input is used as argument for formatPhoneInput function
+            //Line 133: clears any custom validation error message previously set on form element
+        //Line 135: when user leaves input field, anonymous function follows
+            //Line 136: declares const variable digits which contains value of input field without non-digit characters
+            //Line 137: if input field value has no digits (empty)
+                //Line 138: clears any custom validation error messages previously/currently shown
+                //Line 139: exits function
+            //Line 141: if input field does not have 10 digits
+                //Line 142: writes custom validation error message to enter valid phone number
+                //Line 143: displays validation message immediately
+            //Line 146: clears any custom validation error messages previously/currently shown
+        //Line 149: sets maxlength attribute of 14 so input cannot exceed formatted phone number length
     const phoneInputs = [primaryphone1, secondaryphone1, primaryphone2, secondaryphone2, emergencyphonenumber];
     phoneInputs.forEach(function(input) {
         if (!input) return;
@@ -152,32 +153,38 @@
 //REFERRAL & OTHER: VISIBILITY, EVENT LISTENER
 
     //Referral and Other Checkbox Visibility Logic
-        //Line 162: function runs when called
-        /**Line 163: changes referralExtra HTML element's CSS style ([HTML element].style.display)
+        //Line 166: function runs when called
+        /**Line 167: changes referralExtra HTML element's CSS style ([HTML element].style.display)
                      checks whether referral variable checkbox is checked (true or false)
                      makes element visible if true or keeps element hidden if false (? : is a ternary operator that is shorthand for if...else)**/
-        /**Line 164: changes otherExtra HTML element's CSS style ([HTML element].style.display)
+        /**Line 168: changes otherExtra HTML element's CSS style ([HTML element].style.display)
+                     checks whether other variable checkbox is checked (true or false)
+                     makes element visible if true or keeps element hidden if false (? : is a ternary operator that is shorthand for if...else)**/
+        /**Line 169: changes internetExtra HTML element's CSS style ([HTML element].style.display)
                      checks whether other variable checkbox is checked (true or false)
                      makes element visible if true or keeps element hidden if false (? : is a ternary operator that is shorthand for if...else)**/
     function updateSourceExtras() {
         referralExtra.style.display = referral.checked ? 'block' : 'none';
         otherExtra.style.display = other.checked ? 'block' : 'none';
+        internetExtra.style.display = internet.checked ? 'block' : 'none';
     }
 
     //Event Listener For Referral And Other Checkbox Changes
-        //Line 171: runs function updateSourceExtras when referral element state is changed (checked -> unchecked or unchecked -> checked)
-        //Line 172: runs function updateSourceExtras when other element state is changed (checked -> unchecked or unchecked -> checked)
-        //Line 173: runs function updateSourceExtras immediately to set correct visisbility of referral and other checkboxes
+        //Line 177: runs function updateSourceExtras when referral element state is changed (checked -> unchecked or unchecked -> checked)
+        //Line 178: runs function updateSourceExtras when other element state is changed (checked -> unchecked or unchecked -> checked)
+        //Line 179: runs function updateSourceExtras when other element state is changed (checked -> unchecked or unchecked -> checked)
+        //Line 180: runs function updateSourceExtras immediately to set correct visisbility of referral and other checkboxes
     referral.addEventListener('change', updateSourceExtras);
     other.addEventListener('change', updateSourceExtras);
+    internet.addEventListener('change', updateSourceExtras);
     updateSourceExtras();
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //VALIDATION CHECKS: EMAIL, PARENT, STUDENT 
 
     /**Simple Email Validation Code
-        Line 189: function takes in email and when called
-        Line 190: (email || '') keeps email if it is truthy, otherwise uses empty string (to prevent missing value error)
+        Line 196: function takes in email and when called
+        Line 197: (email || '') keeps email if it is truthy, otherwise uses empty string (to prevent missing value error)
                      String(...) converts value into a String
                      .trim() removes spaces from beginning and end (but not middle)
                      /.+@.+\..+/ is email pattern: some characters before @, @, some characters after @, period, some character after period
@@ -191,8 +198,8 @@
     }**/
 
     //Stricter Email Validation Code
-        //Line 212: function takes in email and when called
-        /**Line 213: (email || '') keeps email if it is truthy, otherwise uses empty string (to prevent missing value error)
+        //Line 219: function takes in email and when called
+        /**Line 220: (email || '') keeps email if it is truthy, otherwise uses empty string (to prevent missing value error)
                      String(...) converts value into a String
                      .trim() removes spaces from beginning and end (but not middle)
                      /^[^\s@]+@[^\s@]+\.[^\s@]+$/ is email pattern: some characters before @, @, some characters after @, period, some character after period
@@ -214,20 +221,20 @@
     }
 
     //Email Textbox Validation Message When User Exits Input Field
-        //Line 231: declares const array emailInputs of all email variables
-        //Line 232: does a callback function on each input in emailInputs array ([array].forEach() loops through every item in array)
-        //Line 233: skips to next item if item is empty
-        //Line 234: adds input event listener with anonymous function to each existing element
-            //Line 235: clears any custom validation error message previously set on form element
-        //Line 237: when user leaves input field, anonymous function follows
-            //Line 238: declares const variable email which contains value of input field without leading or trailing spaces
-            //Line 240: if input field value has no characters (empty)
-                //Line 241: clears any custom validation error messages previously/currently shown
-                //Line 242: exits function
-            //Line 244: uses function isValidEmail() to check if input field has a valid email format
-                //Line 245: writes custom validation error message to enter valid email address
-                //Line 246: displays validation message immediately
-            //Line 249: clears any custom validation error messages previously/currently shown for email fields
+        //Line 238: declares const array emailInputs of all email variables
+        //Line 239: does a callback function on each input in emailInputs array ([array].forEach() loops through every item in array)
+        //Line 240: skips to next item if item is empty
+        //Line 241: adds input event listener with anonymous function to each existing element
+            //Line 242: clears any custom validation error message previously set on form element
+        //Line 244: when user leaves input field, anonymous function follows
+            //Line 245: declares const variable email which contains value of input field without leading or trailing spaces
+            //Line 247: if input field value has no characters (empty)
+                //Line 248: clears any custom validation error messages previously/currently shown
+                //Line 249: exits function
+            //Line 251: uses function isValidEmail() to check if input field has a valid email format
+                //Line 252: writes custom validation error message to enter valid email address
+                //Line 253: displays validation message immediately
+            //Line 256: clears any custom validation error messages previously/currently shown for email fields
     const emailInputs = [parentemail1, parentemail2];
     emailInputs.forEach(function(input) {
         if (!input) return;
@@ -252,38 +259,38 @@
     });
 
     //Parent/Guardian 1 Field Validation Code
-        //Line 287: function runs when called
-        //Line 288: declare array variable requiredFields containg all required Parent/Guardian 1 input elements
-        //Line 289: for-loop goes through each item in array requireFields and stores in variable field
-            //Lin3 290: checks if field doesn't exist or field's value is empty
-            //Line 291: if so, it sends alert that fields are required
-            //Line 292: places keyboard cursor (focus) into that input field
-            //Line 293: immediately exits function
-        //Line 296: checks if parentemail1's input value is a valid email address using function isValidEmail()
-            //Line 297: if not, it sends alert to input valid email
-            //Line 298: places keyboard cursor (focus) into parentemail1 field
-            //Line 299: immediately exits function
-         //Line 301: checks if primaryphone1's input value is a valid phone number using function isValidPhone()
-            //Line 302: if not, it sends alert to input valid phone number
-            //Line 303: places keyboard cursor (focus) into primaryphone1 field
-            //Line 304: immediately exits function
-         //Line 307: checks if secondaryphone1's input value is empty and a valid phone number using function isValidPhone()
-            //Line 308: if not, it sends alert to enter complete phone number in field
-            //Line 309: places keyboard cursor (focus) into that field
-            //Line 310: immediately exits function
-        //Line 312: checks if primaryphone2's input value is empty and a valid phone number using function isValidPhone()
-            //Line 313: if not, it sends alert to enter complete phone number in field
-            //Line 314: places keyboard cursor (focus) into that field
-            //Line 315: immediately exits function
-        //Line 317: checks if secondaryphone2's input value is empty and a valid phone number using function isValidPhone()
-            //Line 318: if not, it sends alert to enter complete phone number in field
-            //Line 319: places keyboard cursor (focus) into that field
-            //Line 320: immediately exits function
-        //Line 322: checks if emergencyphonenumber's input value is empty and a valid phone number using function isValidPhone()
-            //Line 323: if not, it sends alert to enter complete phone number in field
-            //Line 324: places keyboard cursor (focus) into that field
-            //Line 325: immediately exits function
-        //Line 327: if all required parent fields passed, returns true for validation  
+        //Line 294: function runs when called
+        //Line 295: declare array variable requiredFields containg all required Parent/Guardian 1 input elements
+        //Line 296: for-loop goes through each item in array requireFields and stores in variable field
+            //Lin3 297: checks if field doesn't exist or field's value is empty
+            //Line 298: if so, it sends alert that fields are required
+            //Line 299: places keyboard cursor (focus) into that input field
+            //Line 300: immediately exits function
+        //Line 303: checks if parentemail1's input value is a valid email address using function isValidEmail()
+            //Line 304: if not, it sends alert to input valid email
+            //Line 305: places keyboard cursor (focus) into parentemail1 field
+            //Line 306: immediately exits function
+         //Line 308: checks if primaryphone1's input value is a valid phone number using function isValidPhone()
+            //Line 309: if not, it sends alert to input valid phone number
+            //Line 310: places keyboard cursor (focus) into primaryphone1 field
+            //Line 311: immediately exits function
+         //Line 314: checks if secondaryphone1's input value is empty and a valid phone number using function isValidPhone()
+            //Line 315: if not, it sends alert to enter complete phone number in field
+            //Line 316: places keyboard cursor (focus) into that field
+            //Line 317: immediately exits function
+        //Line 319: checks if primaryphone2's input value is empty and a valid phone number using function isValidPhone()
+            //Line 320: if not, it sends alert to enter complete phone number in field
+            //Line 321: places keyboard cursor (focus) into that field
+            //Line 322: immediately exits function
+        //Line 324: checks if secondaryphone2's input value is empty and a valid phone number using function isValidPhone()
+            //Line 325: if not, it sends alert to enter complete phone number in field
+            //Line 326: places keyboard cursor (focus) into that field
+            //Line 327: immediately exits function
+        //Line 329: checks if emergencyphonenumber's input value is empty and a valid phone number using function isValidPhone()
+            //Line 330: if not, it sends alert to enter complete phone number in field
+            //Line 331: places keyboard cursor (focus) into that field
+            //Line 332: immediately exits function
+        //Line 334: if all required parent fields passed, returns true for validation  
     function validateParent1Fields() {
         const requiredFields = [parentguardian1, primaryphone1, parentemail1];
         for (const field of requiredFields) {
@@ -328,14 +335,14 @@
     }
 
     //Student 1 Field Validation Code
-        //Line 339: function runs when called
-        //Line 340: declare array variable requiredFields containg all required Student 1 input elements
-        //Line 341: for-loop goes through each item in array requireFields and stores in variable field
-            //Line 342: checks if field doesn't exist or field's value is empty
-            //Line 343: if so, it sends alert that fields are required
-            //Line 344: places keyboard cursor (focus) into that input field
-            //Line 345: immediately exits function
-        //Line 348: if all required parent fields passed, returns true for validation  
+        //Line 3346: function runs when called
+        //Line 347: declare array variable requiredFields containg all required Student 1 input elements
+        //Line 348: for-loop goes through each item in array requireFields and stores in variable field
+            //Line 349: checks if field doesn't exist or field's value is empty
+            //Line 350: if so, it sends alert that fields are required
+            //Line 351: places keyboard cursor (focus) into that input field
+            //Line 352: immediately exits function
+        //Line 355: if all required parent fields passed, returns true for validation  
     function validateStudent1Fields() {
         const requiredFields = [studentname1, studentgrade1];
         for (const field of requiredFields) {
@@ -352,11 +359,11 @@
 //BUTTON EVENT LISTENER: RESET, SUBMIT
 
     //Event Listener For Reset Button Clicks
-        //Line 360: runs anonymous event when resetButton is clicked
-        //Line 361: prevents browser's normal behavior (immediately clears form without alerting)
-        //Line 362: asks user for confirmation to reset form (OK or Cancel)
-        //Line 363: resets all input values in all fields within form
-        //Line 363: runs function updateSourceExtras immediately to set correct visisbility of referral and other checkboxes
+        //Line 367: runs anonymous event when resetButton is clicked
+        //Line 368: prevents browser's normal behavior (immediately clears form without alerting)
+        //Line 369: asks user for confirmation to reset form (OK or Cancel)
+        //Line 370: resets all input values in all fields within form
+        //Line 371: runs function updateSourceExtras immediately to set correct visisbility of referral and other checkboxes
     resetButton.addEventListener("click", function(event) {
         event.preventDefault();
         if (confirm("Are you sure you want to reset the form? All data will be lost.")) {
@@ -366,26 +373,26 @@
     });
 
     //Event Listener For Submit Button Clicks
-        //Line 389: runs anonymous event when resetButton is clicked
-        //Line 390: prevents browser's normal behavior (immediately submits form without alerting)
-        //Line 391: runs Parent Validation Code and if not valid exits function before submission
-        //Line 392: runs Student Validation Code and if not valid exits function before submission
-        //Line 393: asks user for confirmation to submit form (OK or Cancel), if Cancel it exits function before submission
-        //Line 395: sends fetch() request to server (scriptURL is destination URL where form data is sent to)
-            //Line 396: POST method sends new data
-            //Line 397: creates new package FormData containing all form fields
-        //Line 399: when server responds to fetch() request, following function runs (response is stored in variable response)
-            //Line 400: checks if request succeeded
-            //Line 401: if failed, creates error and jumps to .catch()
-            //Line 403: converts response into readable text and server returns message
-        //Line 405: after server successfully process response (submits form)
-            //Line 406: sends alert that form is submitted
-            //Line 407: converts response into readable text and server returns message
-            //Line 408: runs function updateSourceExtras immediately to set correct visisbility of referral and other checkboxes
-            //Line 409: places keyboard cursor (focus) into first input, select, or textarea field of form (? is a chaining operator preventing error if no such fields exist) 
-        //Line 411: if something fails: internet problem, server error, invalid URL, network failure
-            //Link 412: prints error details to browser console
-            //Link 413: sends alert of failed submission and to try later
+        //Line 396: runs anonymous event when resetButton is clicked
+        //Line 397: prevents browser's normal behavior (immediately submits form without alerting)
+        //Line 398: runs Parent Validation Code and if not valid exits function before submission
+        //Line 399: runs Student Validation Code and if not valid exits function before submission
+        //Line 400: asks user for confirmation to submit form (OK or Cancel), if Cancel it exits function before submission
+        //Line 402: sends fetch() request to server (scriptURL is destination URL where form data is sent to)
+            //Line 403: POST method sends new data
+            //Line 404: creates new package FormData containing all form fields
+        //Line 406: when server responds to fetch() request, following function runs (response is stored in variable response)
+            //Line 407: checks if request succeeded
+            //Line 408: if failed, creates error and jumps to .catch()
+            //Line 410: converts response into readable text and server returns message
+        //Line 412: after server successfully process response (submits form)
+            //Line 413: sends alert that form is submitted
+            //Line 414: converts response into readable text and server returns message
+            //Line 415: runs function updateSourceExtras immediately to set correct visisbility of referral and other checkboxes
+            //Line 416: places keyboard cursor (focus) into first input, select, or textarea field of form (? is a chaining operator preventing error if no such fields exist) 
+        //Line 418: if something fails: internet problem, server error, invalid URL, network failure
+            //Link 419: prints error details to browser console
+            //Link 420: sends alert of failed submission and to try later
     submitButton.addEventListener("click", function(event) {
         event.preventDefault();
         if (!validateParent1Fields()) { return; }
